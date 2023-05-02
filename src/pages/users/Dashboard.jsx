@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import axios from "axios";
 import { toast } from "react-toastify";
 import NavbarComponent from "../../components/Header/NavbarComponent";
+import "./Users.css";
 
 function Dashboard() {
   const [user, setUser] = useState("");
@@ -43,9 +44,12 @@ function Dashboard() {
   return (
     <>
       <NavbarComponent />
-      <Container className="p-4">
-        <h1 className="text-center">Hi, {user?.name}!</h1>
-        <h1 className="text-center">This page only can be accessed by user having login</h1>
+      <Container className="p-5 vh-100 mt-5">
+        <h1 className="text-center text-light">
+          Name: {user?.name} <br />
+          Email: {user?.email}
+        </h1>
+        <h1 className="text-center text-light">This page only can be accessed by user having login</h1>
       </Container>
     </>
   );

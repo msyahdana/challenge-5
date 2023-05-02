@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import DetailMovie from "./pages/users/DetailMovie";
 import Dashboard from "./pages/users/Dashboard";
 import SearchPage from "./pages/SearchPage";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import NoToken from "./components/Auth/NoToken";
 import Protected from "./components/Auth/Protected";
 
@@ -12,6 +14,24 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route
+          path="/login"
+          element={
+            <NoToken>
+              <Login />
+            </NoToken>
+          }
+        />
+
+        <Route
+          path="/register"
+          element={
+            <NoToken>
+              <Register />
+            </NoToken>
+          }
+        />
+
         <Route path="/search" element={<SearchPage />} />
         <Route
           path="users/detail/:id"
