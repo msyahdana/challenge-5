@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NavbarComponent from "../components/Header/NavbarComponent";
-import { Form, Button, Container, Row, Col, Card } from "react-bootstrap";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Google from "../components/Auth/Google";
@@ -55,52 +55,49 @@ function Register() {
           <h1 className="text-center text-white mb-4 mt-4">
             Register Your Account
           </h1>
-          <Card>
-            <Card.Body>
-              <Form onSubmit={onSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label className="text-light">Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label className="text-light">Email address</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label className="text-light">Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </Form.Group>
-              </Form>
-              <Row>
-                <Col className="text-center ">
-                  <Button className="w-25" variant="danger" type="submit">
-                    Submit
-                  </Button>
-                </Col>
-              </Row>
-              <Row>
-                <Col className="text-center pt-1">
-                  <Google buttonText="Login with Google 🚀" />
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
+          <Form onSubmit={onSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className="text-light">Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className="text-light">Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label className="text-light">Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+          </Form>
+          <Row>
+            <Col className="text-center ">
+              <Button className="w-25" variant="danger" type="submit">
+                Submit
+              </Button>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="text-center pt-1">
+              <Google buttonText="Login with Google 🚀" />
+            </Col>
+          </Row>
         </Container>
       </div>
     </>
