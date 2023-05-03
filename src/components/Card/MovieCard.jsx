@@ -17,9 +17,12 @@ function MovieCard({ title, poster, to }) {
         outlineStyle: "outset",
         outlineWidth: "thin",
       }}
-      className="Card-component"
+      className="Card-component mb-5"
     >
-      <Card.Img variant="top" src={`https://image.tmdb.org/t/p/original${poster}`} />
+      <Card.Img
+        variant="top"
+        src={`https://image.tmdb.org/t/p/original${poster}`}
+      />
       <Card.Body style={{ color: "black" }}>
         <Card.Title style={{ color: "white" }}>
           <h4 className="text-center">{title}</h4>

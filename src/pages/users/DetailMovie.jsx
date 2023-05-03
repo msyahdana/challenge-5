@@ -16,11 +16,14 @@ function DetailMovie() {
     const getDetailMovie = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`${process.env.REACT_APP_API}/v1/movie/${params.id}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          `${process.env.REACT_APP_API}/v1/movie/${params.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         // console.log(JSON.stringify(response.data.data));
         const data = response.data.data;
         setDetailMovie(data);
@@ -48,20 +51,28 @@ function DetailMovie() {
       <NavbarComponent />
       <Carousel controls={false}>
         <Carousel.Item>
-          <img className="Carousel-img d-block w-100" src={`https://image.tmdb.org/t/p/original${detailMovie?.backdrop_path}`} alt="First slide" />
+          <img
+            className="Carousel-img d-block w-100"
+            src={`https://image.tmdb.org/t/p/original${detailMovie?.backdrop_path}`}
+            alt="First slide"
+          />
           <Carousel.Caption className="Movie-caption">
             <h2 className="Movie-caption-title">{detailMovie?.title}</h2>
             <p className="Movie-genres">
               {detailMovie?.genres &&
                 detailMovie?.genres?.length > 0 &&
                 detailMovie?.genres?.map((genre, i) => {
-                  return i === detailMovie?.genres.length - 1 ? genre.name : `${genre.name}, `;
+                  return i === detailMovie?.genres.length - 1
+                    ? genre.name
+                    : `${genre.name}, `;
                 })}
             </p>
             <p className="Movie-caption-text">{detailMovie?.overview}</p>
             <p className="Movie-rate">
               <StarFill className="Icon-star" />
-              {detailMovie?.vote_average ? detailMovie.vote_average.toFixed(1) : "-"}
+              {detailMovie?.vote_average
+                ? detailMovie.vote_average.toFixed(1)
+                : "-"}
             </p>
             <Button className="Movie-caption-button" variant="danger">
               Watch Trailer
