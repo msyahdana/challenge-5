@@ -87,8 +87,8 @@ function Register() {
             </Form.Group>
           </Form>
           <Row>
-            <Col className="text-center ">
-              <Button className="w-25" variant="danger" type="submit">
+            <Col className="text-start">
+              <Button variant="danger" type="submit">
                 Submit
               </Button>
             </Col>
