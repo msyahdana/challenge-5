@@ -27,6 +27,14 @@
   width: 90px;
 }
 
+.Navbar-button-lg {
+  margin-right: auto;
+  margin-left: 20px;
+  border: 2px solid red;
+  border-radius: 20px;
+  width: 100px;
+}
+
 .Carousel {
   position: relative;
 }
