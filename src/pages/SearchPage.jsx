@@ -36,7 +36,9 @@ function SearchPage() {
       <Header />
       <Container>
         <h2 className="text-danger p-4">Result Found: {resultName}</h2>
-        <div className="d-flex flex-wrap justify-content-center">{searchedMovieList.length > 0 && searchedMovieList.map((movie, i) => <MovieCard key={i} title={movie.title} poster={movie.poster_path} to={`/detail/${movie.id}`} />)}</div>
+        <div className="d-flex flex-wrap justify-content-center">
+          {searchedMovieList.length > 0 && searchedMovieList.map((movie, i) => <MovieCard key={i} title={movie.title} poster={movie.poster_path} to={`/users/detail/${movie.id}`} />)}
+        </div>
       </Container>
     </>
   );
