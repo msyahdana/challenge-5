@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, Container, Row, Col, Card } from "react-bootstrap";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import NavbarComponent from "../components/Header/NavbarComponent";
 import { toast } from "react-toastify";
@@ -20,7 +20,7 @@ function Login() {
 
       let config = {
         method: "post",
-        url: "https://km4-challenge-5-api.up.railway.app/api/v1/auth/login",
+        url: `${process.env.REACT_APP_API}/v1/auth/login`,
         headers: {
           "Content-Type": "application/json",
         },
@@ -51,46 +51,35 @@ function Login() {
         <NavbarComponent />
 
         <Container className="p-5 mt-5">
-          <h1 className="text-center text-white mb-4 mt-4">
-            Login In to Your Account
-          </h1>
-          <Card>
-            <Card.Body>
-              <Form onSubmit={onSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label className="text-light">Email address</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </Form.Group>
+          <h1 className="text-center text-white mb-4 mt-4">Login Into Your Account</h1>
+          <Form onSubmit={onSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className="text-light">Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label className="text-light">Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </Form.Group>
-              </Form>
-              <Row>
-                <Col className="text-center ">
-                  <Button className="w-25" variant="danger" type="submit">
-                    Submit
-                  </Button>
-                </Col>
-              </Row>
-              <Row>
-                <Col className="text-center pt-1">
-                  <Google buttonText="Login with Google 🚀" />
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label className="text-light">Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </Form.Group>
+            <Row>
+              <Col className="text-center pt-1">
+                <Button className="w-25" variant="danger" type="submit">
+                  Submit
+                </Button>
+              </Col>
+            </Row>
+            <Row>
+              <Col className="text-center">
+                <h3 className="text-light py-2">Or</h3>
+              </Col>
+            </Row>
+            <Row>
+              <Col className="text-center">
+                <Google buttonText="Login with Google 🚀" />
+              </Col>
+            </Row>
+          </Form>
         </Container>
       </div>
     </>

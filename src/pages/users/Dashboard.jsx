@@ -3,7 +3,6 @@ import { Container } from "react-bootstrap";
 import axios from "axios";
 import { toast } from "react-toastify";
 import NavbarComponent from "../../components/Header/NavbarComponent";
-import "./Users.css";
 
 function Dashboard() {
   const [user, setUser] = useState("");

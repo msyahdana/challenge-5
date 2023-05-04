@@ -13,9 +13,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 
 function App() {
   return (
-    <GoogleOAuthProvider
-      clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID}
-    >
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -55,8 +53,8 @@ function App() {
             }
           />
         </Routes>
-        <ToastContainer theme="colored" />
         <Footer />
+        <ToastContainer theme="colored" />
       </BrowserRouter>
     </GoogleOAuthProvider>
   );
