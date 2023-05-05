@@ -26,7 +26,7 @@ function Dashboard() {
           // If not valid token
           if (error.response.status === 401) {
             localStorage.removeItem("token");
-            // Temporary solution
+
             return (window.location.href = "/");
           }
 

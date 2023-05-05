@@ -34,9 +34,6 @@ function Register() {
 
       localStorage.setItem("token", token);
 
-      // navigate("/");
-
-      // Temporary solution
       window.location.href = "/";
     } catch (error) {
       if (axios.isAxiosError(error)) {
