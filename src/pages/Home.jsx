@@ -5,8 +5,17 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import MovieCard from "../components/Card/MovieCard";
 import Header from "../components/Header/Header";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { getAllPosts } from "../redux/actions/postActions";
 
 function Home() {
+  // To set the state of the store
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllPosts());
+  }, [dispatch]);
+
   const [popularMovieList, setPopularMovieList] = useState([]);
   const [page, setPage] = useState(1);
 
